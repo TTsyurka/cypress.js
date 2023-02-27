@@ -15,9 +15,10 @@ describe('Тестирование сайта testqastudio.me', function () {
 
         cy.get('#billing_first_name').type('Иван');
         cy.get('#billing_last_name').type('Иванов');
-        //cy.get('#billing_country_field > .woocommerce-input-wrapper > .select2 > .selection > .select2-selection > .select2-selection__arrow').click().select('Россия');;
-        //cy.get('#select2-billing_country-container').click().select('Россия');
-        //cy.get('#select2-billing_country-result-bldp-RU').click();
+        
+        cy.get('#select2-billing_country-container').click();
+        cy.get('li.select2-results__option').contains('Россия').click();
+        
         cy.get('#billing_address_1').type('Жемчужная 6-312');
         cy.get('#billing_city').type('Москва');
         cy.get('#billing_state').type('Московская область');
